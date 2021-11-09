@@ -2,11 +2,13 @@ import {
       BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
 import './App.css';
+import AddPackage from "./components/AddPackage/AddPackage";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
+import PackageDetails from "./components/PackageDetails/PackageDetails";
 import Register from "./components/Register/Register";
 import AuthProvider from "./context/AuthProvider";
 
@@ -26,6 +28,12 @@ function App() {
 
                       <Route path="/login">
                            <Login></Login>
+                      </Route>
+                      <Route path="/add">
+                           <AddPackage></AddPackage>
+                      </Route>
+                      <Route path="/product/:packageID">
+                            <PackageDetails></PackageDetails>
                       </Route>
 
                       <Route path="/register">

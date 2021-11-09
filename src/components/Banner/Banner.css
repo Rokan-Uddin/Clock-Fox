@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Merriweather:ital@1&family=Poppins&family=Roboto+Slab&display=swap');
 
 .banner{
-    background-image: url('../../images/5.jpg');
+    background-image: url('../../images/8.jpg');
     background-color: #cccccc; 
     height: 450px; 
     background-position: left 20% top 30%; 
@@ -14,9 +14,11 @@
 	font-family: 'Irish Grover', cursive;
 	font-size: xx-large;
 	font-weight: 800;
+	color: white;
 }
 .banner-description{
 font-family: 'Merriweather', serif;
+color: white;
 
 }
 .myButton {

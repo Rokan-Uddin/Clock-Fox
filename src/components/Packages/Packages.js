@@ -1,0 +1,34 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Packages.css';
+const Packages = (props) => {
+    const {_id,name,description,url,price,model,brand,series,material}=props.product;
+    return (
+        <div className="col-lg-4 col-sm-12">
+            <div>
+                <div className="row cart">
+                    <div className="col-lg-12"><img src={url} alt="" /></div>
+                    <div>
+                        <div>
+                        <h5 className="text-start mt-3 text-primary">{name}</h5>
+                        <p>{model}</p>
+                        <p>{brand}</p>
+                        <p>{material}</p>
+                        <p>{series}</p>
+                        </div>
+                    </div>
+                </div>
+                <small>{description.slice(0,200)} ...</small>
+                <div className="d-flex justify-content-between mx-3 pt-4">
+                    <h5>$<span className="text-success">{price}</span></h5>
+                </div>
+                <Link to={`/product/${_id}`} >
+                        <button className="new-btn" >See Details</button>
+                </Link>
+            </div>
+        </div>
+    );
+};
+
+export default Packages;
+

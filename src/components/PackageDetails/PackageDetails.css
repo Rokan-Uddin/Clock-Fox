@@ -1,0 +1,27 @@
+.service-img{
+    width: 400px;
+    height: 400px;
+}
+.facilities {
+    margin-top: 10px;
+    width: 80%;
+    margin-left: auto;
+    background-color: rgb(238, 228, 228);
+    font-weight: 200;
+    font-size: 14px;
+}
+/* responsive for small device  */
+@media only screen and (max-width: 768px) {
+   .service-img{
+       width: 100%;
+       margin-bottom: 10px;
+   }
+   .facilities{
+       width: auto;
+       margin-left: 0px;
+   }
+   .point{
+       width: 100%;
+       margin: 0px;
+   }
+  }
