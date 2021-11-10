@@ -37,9 +37,10 @@ const Home = () => {
                 >
                     {review.name}
                     <Rating 
-            initialRating={parseInt(review.rating)}
-            readonly
-            />                    {review.description}
+                    initialRating={parseInt(review.rating)}
+                    readonly
+                    />    
+                    {review.description}
                 </div> )
             }
             </div>

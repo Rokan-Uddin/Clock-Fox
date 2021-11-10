@@ -4,6 +4,7 @@ import {
 import './App.css';
 import AddPackage from "./components/AddPackage/AddPackage";
 import AllPlan from "./components/AllPlan/AllPlan";
+import Dashboard from "./components/Dashboard/Dashboard";
 import Explore from "./components/Explore/Explore";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -44,6 +45,9 @@ function App() {
                       </Route>
                       <Route path="/review">
                             <Review></Review>
+                      </Route>
+                      <Route path="/dashboard">
+                            <Dashboard></Dashboard>
                       </Route>
                       <Route path="/allorder">
                            <AllPlan></AllPlan>
