@@ -30,10 +30,12 @@ const PackageDetails = () => {
       data.name=user.displayName;
       data.packageId=packageID;
       data.title=packageDetails.name;
-      data.date=packageDetails.startingDate;
-      data.country=packageDetails.location;
+      data.brand=packageDetails.brand;
+      data.model=packageDetails.model;
+      data.series=packageDetails.series;
+      data.material=packageDetails.material;
       data.status=false;
-      axios.post('https://guarded-fjord-59567.herokuapp.com/package', data)
+      axios.post('http://localhost:5000/order', data)
       .then(res => {
           if (res.data.insertedId) {
               alert('added successfully');
@@ -99,8 +101,7 @@ const PackageDetails = () => {
                                     {errors.address &&  <span className="error">Address is required</span>}
                                     <input   placeholder="Phone" {...register("phone", {required:true})} />
                                     {errors.phone &&  <span className="error">Phone is required</span>}
-                                    <input   placeholder="Total Member" {...register("quantity", {required:true})} />
-                                    {errors.quantity &&  <span className="error">Number of Tourist should be confirmed</span>}
+                                    
                                     <input type="submit" value="Book Now" />
                               </form>
                       </div>

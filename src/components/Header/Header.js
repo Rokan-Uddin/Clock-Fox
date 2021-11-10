@@ -13,11 +13,11 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-            <Nav.Link as={HashLink} to="/home#products">Explores</Nav.Link>
+            <Nav.Link as={HashLink} to="/explore">Explores</Nav.Link>
             { user.email && <Nav.Link as={Link} to="/myproducts">DashBoard</Nav.Link> }
-            { user.email && <Nav.Link as={Link} to="/myproducts">My Orders</Nav.Link> }
-            { user.email && <Nav.Link as={Link} to="/myproducts">Review</Nav.Link> }
-            { user.email &&  <Nav.Link as={Link} to="/manageall">Manage All Products</Nav.Link> }
+            { user.email && <Nav.Link as={Link} to="/myorder">My Orders</Nav.Link> }
+            { user.email && <Nav.Link as={Link} to="/review">Review</Nav.Link> }
+            { user.email &&  <Nav.Link as={Link} to="/allorder"> All Products</Nav.Link> }
             { user.email &&  <Nav.Link as={Link} to="/add">Add Products</Nav.Link> }
             </Nav>
             <Nav>
