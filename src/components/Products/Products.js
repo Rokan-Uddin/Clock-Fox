@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Packages.css';
-const Packages = (props) => {
+import './Products.css';
+const Products = (props) => {
     const {_id,name,description,url,price,model,brand,series,material}=props.product;
     return (
         <div className="col-lg-4 col-sm-12">
@@ -27,5 +27,5 @@ const Packages = (props) => {
     );
 };
 
-export default Packages;
+export default Products;
 

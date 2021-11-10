@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Packages from '../Packages/Packages';
+import Products from '../Products/Products';
+
 
 const Explore = () => {
     const [products,setProducts]=useState([]);
@@ -11,12 +12,13 @@ const Explore = () => {
     },[])
     return (
         <div className="container">
+            <h1 className="my-5">Our Products</h1>
             <div className="row">
             {
-                products.map(product=><Packages
+                products.map(product=><Products
                 product={product}
                 key={product._id}
-                ></Packages>)
+                ></Products>)
             }
             </div>
         </div>

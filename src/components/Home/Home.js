@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactStars from "react-rating-stars-component";
 import Banner from '../Banner/Banner';
-import Packages from '../Packages/Packages';
+import Products from '../Products/Products';
 import './Home.css';
 const Home = () => {
     const [products,setProducts]=useState([]);
@@ -27,10 +27,10 @@ const Home = () => {
                 <h1 className="my-5">Our Products</h1>
             <div className="row">
             {
-                products.map(product=><Packages
+                products.map(product=><Products
                 product={product}
                 key={product._id}
-                ></Packages>)
+                ></Products>)
             }
             </div>
             </div>
@@ -41,7 +41,7 @@ const Home = () => {
             {
                 reviews.map(review=> <div
                 key={review._id}
-                className="border col-lg-4"
+                className="border-start col-lg-4"
                 >
                     
                     <div className="d-flex justify-content-between">
