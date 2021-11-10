@@ -32,7 +32,7 @@ const Login = () => {
                 </form>
             </div>
             <div>
-                <p>New User?</p>
+                <p className="text-center">New User?</p>
                 <Link to='/register'>   Register</Link>
                 <div>-----------------or--------------</div>
                 <button onClick={handleGoogleSignIn} className="google-btn mt-2" >

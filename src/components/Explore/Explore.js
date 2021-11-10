@@ -5,12 +5,12 @@ const Explore = () => {
     const [products,setProducts]=useState([]);
     // fetch data using useEffect and assing to packages variable 
     useEffect(()=>{
-        fetch("http://localhost:5000/products")
+        fetch("https://enigmatic-stream-34553.herokuapp.com/products")
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[])
     return (
-        <div>
+        <div className="container">
             <div className="row">
             {
                 products.map(product=><Packages
@@ -19,8 +19,6 @@ const Explore = () => {
                 ></Packages>)
             }
             </div>
-            <h2>Review</h2>
-            <h2>Extra Section</h2>
         </div>
     );
 };

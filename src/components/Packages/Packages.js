@@ -11,16 +11,13 @@ const Packages = (props) => {
                     <div>
                         <div>
                         <h5 className="text-start mt-3 text-primary">{name}</h5>
-                        <p>{model}</p>
-                        <p>{brand}</p>
-                        <p>{material}</p>
-                        <p>{series}</p>
                         </div>
                     </div>
                 </div>
                 <small>{description.slice(0,200)} ...</small>
                 <div className="d-flex justify-content-between mx-3 pt-4">
                     <h5>$<span className="text-success">{price}</span></h5>
+                    <h5>{brand}</h5>
                 </div>
                 <Link to={`/product/${_id}`} >
                         <button className="new-btn" >See Details</button>

@@ -2,7 +2,7 @@ import {
       BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
 import './App.css';
-import AddPackage from "./components/AddPackage/AddPackage";
+import AddProduct from "./components/AddProduct/AddProduct";
 import AllPlan from "./components/AllPlan/AllPlan";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Explore from "./components/Explore/Explore";
@@ -10,9 +10,10 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
-import MyPackage from "./components/MyPackage/MyPackage";
+import MyProduct from "./components/MyProduct/MyProduct";
 import NotFound from "./components/NotFound/NotFound";
 import PackageDetails from "./components/PackageDetails/PackageDetails";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Register from "./components/Register/Register";
 import Review from "./components/Review/Review";
 import AuthProvider from "./context/AuthProvider";
@@ -38,10 +39,10 @@ function App() {
                            <Login></Login>
                       </Route>
                       <Route path="/add">
-                           <AddPackage></AddPackage>
+                           <AddProduct></AddProduct>
                       </Route>
                       <Route path="/myorder">
-                            <MyPackage></MyPackage>
+                            <MyProduct></MyProduct>
                       </Route>
                       <Route path="/review">
                             <Review></Review>
@@ -52,9 +53,9 @@ function App() {
                       <Route path="/allorder">
                            <AllPlan></AllPlan>
                       </Route>
-                      <Route path="/product/:packageID">
+                      <PrivateRoute path="/product/:packageID">
                             <PackageDetails></PackageDetails>
-                      </Route>
+                      </PrivateRoute>
 
                       <Route path="/register">
                             <Register></Register>

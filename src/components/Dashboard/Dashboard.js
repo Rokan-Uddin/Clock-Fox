@@ -1,39 +1,41 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import {
-    BrowserRouter as Router, Link, Route, Switch
+    BrowserRouter as Router, Link, Route, Switch, useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../hooks/useAuth';
-import AddPackage from '../AddPackage/AddPackage';
+import AddProduct from '../AddProduct/AddProduct';
 import AllPlan from '../AllPlan/AllPlan';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import MyPackage from '../MyPackage/MyPackage';
+import ManageProduct from '../ManageProduct/ManageProduct';
+import MyProduct from '../MyProduct/MyProduct';
 import Review from '../Review/Review';
 
 const Dashboard = () => {
-    const {user}= useAuth();
+    const {user,admin,logOut}= useAuth();
+    let { path, url } = useRouteMatch();
     return (
         <Router>
         <div className="row">
                 <div className="col-lg-4">
-                
                     
                 { 
-                user.email && user.displayName==="Admin" && 
+                user.email && admin && 
                 <div>
-                    <Link to="/manageAllOrder">Manage All Orders</Link> <br />
-                    <Link to="/addProduct">Add A Product</Link> <br />
-                    <Link to="/makeAdmin">Make Admin</Link> <br />
-                    <Link to="/manageProducts">Manage Products</Link> <br />
-                    <Link to="/logout">Logout</Link>
+                    <Link to={`${url}/manageAllOrder`}>Manage All Orders</Link> <br />
+                    <Link to={`${url}/addProduct`}>Add A Product</Link> <br />
+                    <Link to={`${url}/makeAdmin`}>Make Admin</Link> <br />
+                    <Link to={`${url}/manageProducts`}>Manage Products</Link> <br />
+                    <Button onClick={logOut} variant="light">Logout</Button>
                 </div>
                 }
                 { 
-                user.email && user.displayName!=="Admin" && 
+                user.email && !admin && 
                 <div>
-                    <Link to="/pay">Pay</Link> <br />
-                    <Link to="/myorders">MyOrders</Link> <br />
-                    <Link to="/review">Review</Link> <br />
-                    <Link to="/logout">Logout</Link>
+                    <Link to={`${url}/pay`}>Pay</Link> <br />
+                    <Link to={`${url}/myorders`}>MyOrders</Link> <br />
+                    <Link to={`${url}/review`}>Review</Link> <br />
+                    <Button onClick={logOut} variant="light">Logout</Button>
                 </div>
                 }
                     
@@ -41,29 +43,29 @@ const Dashboard = () => {
                 </div>
                 <div className="col-lg-8">
                         <Switch>
-                            <Route  exact path="/dashboard">
+                            <Route  exact path={path}>
                                 Wellcome to Dashboard
                             </Route>
-                            <Route  path="/pay">
-                                Pay coming
+                            <Route  path={`${path}/pay`}>
+                            Payment system coming soon.
                             </Route>
-                            <Route  path="/myorders">
-                                <MyPackage></MyPackage>
+                            <Route  path={`${path}/myorders`}>
+                                <MyProduct></MyProduct>
                             </Route>
-                            <Route path="/review">
+                            <Route path={`${path}/review`}>
                                 <Review></Review>
                             </Route>
-                            <Route path="/addProduct">
-                                <AddPackage></AddPackage>
+                            <Route path={`${path}/addProduct`}>
+                                <AddProduct></AddProduct>
                             </Route>
-                            <Route path="/manageAllOrder">
+                            <Route path={`${path}/manageAllOrder`}>
                                 <AllPlan></AllPlan>
                             </Route>
-                            <Route path="/makeAdmin">
+                            <Route path={`${path}/makeAdmin`}>
                                 <MakeAdmin></MakeAdmin>
                             </Route>
-                            <Route path="/manageProducts">
-                                <p>Details about Manage all orders or Manage products will be provided later.</p>
+                            <Route path={`${path}/manageProducts`}>
+                                <ManageProduct></ManageProduct>
                             </Route>
                     </Switch>
                 </div>

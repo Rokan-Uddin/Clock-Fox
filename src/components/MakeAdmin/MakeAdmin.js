@@ -8,7 +8,7 @@ const MakeAdmin = () => {
     const history = useHistory()
     const onSubmit = data => {
         console.log(data.email)
-        axios.post('http://localhost:5000/makeadmin',data.email)
+        axios.put(`https://enigmatic-stream-34553.herokuapp.com/makeadmin?email=${data.email}`)
         .then(res=>{
             alert("Added Successfully")
             reset()

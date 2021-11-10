@@ -8,6 +8,7 @@ const useFirebase = () => {
     const [user,setUser]= useState({});
     const [isLoading,setIsLoading]= useState(true);
     const [error,setError]=useState('');
+    const [admin, setAdmin] = useState(false);
     const auth = getAuth();
     // login,register using google account 
     const signInUsingGoogle= (history,redirect_uri) => {
@@ -15,7 +16,9 @@ const useFirebase = () => {
         const googleProvider = new GoogleAuthProvider();
         signInWithPopup(auth,googleProvider)
         .then(result=> {
-            setUser(result.user);
+            const user = result.user;
+                saveUser(user.email, user.displayName, 'PUT');
+                setUser(user);
         })
         .finally(()=>{
             history.push(redirect_uri);
@@ -48,7 +51,7 @@ const useFirebase = () => {
             setIsLoading(false)
         });
         return ()=> unsubscribed;
-    },[])
+    },[auth])
     const logOut = () => {
         setIsLoading(true)
         signOut(auth)
@@ -69,6 +72,8 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth,email,password)
         .then(result=>{
             setUser(result.user);
+            // save user to the database
+            saveUser(email, name, 'POST');
             updateUser(name,history,redirect_uri);
         })
         .catch((err=>{
@@ -76,9 +81,27 @@ const useFirebase = () => {
         }))
 
     }
+    useEffect(() => {
+        fetch(`https://enigmatic-stream-34553.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
+    
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('https://enigmatic-stream-34553.herokuapp.com/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
     return {
         user,
         error,
+        admin,
         signInUsingGoogle,
         logOut,
         isLoading,

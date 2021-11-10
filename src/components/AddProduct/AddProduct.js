@@ -2,12 +2,12 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
-import './AddPackage.css';
-const AddPackage = () => {
+import './AddProduct.css';
+const AddProduct = () => {
     const { register, handleSubmit, formState: { errors },reset } = useForm();
     const history = useHistory()
     const onSubmit = data => {
-        axios.post('http://localhost:5000/addproduct',data)
+        axios.post('https://enigmatic-stream-34553.herokuapp.com/addproduct',data)
         .then(res=>{
             alert("Added Successfully")
             reset()
@@ -24,10 +24,6 @@ const AddPackage = () => {
                     {errors.name &&  <span className="error">Title is required</span>}
                     <input  placeholder="Brand" {...register("brand", {required:true})} />
                     {errors.brand &&  <span className="error">Brand is required</span>}
-                    <input  placeholder="Model" {...register("model", {required:true})} />
-                    {errors.model &&  <span className="error">Model is required</span>}
-                    <input  placeholder="Series" {...register("series", {required:true})} />
-                    {errors.series &&  <span className="error">Series is required</span>}
                     <input  placeholder="Material" {...register("material", {required:true})} />
                     {errors.material &&  <span className="error">Material is required</span>}
                     <input  placeholder="Price" {...register("price", {required:true})} />
@@ -44,4 +40,4 @@ const AddPackage = () => {
     );
 };
 
-export default AddPackage;
+export default AddProduct;

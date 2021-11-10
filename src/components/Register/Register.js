@@ -35,7 +35,7 @@ const Register = () => {
 
             </div>
             <div>
-                <p>Already registered?</p>
+                <p className="text-center">Already registered?</p>
                 <Link to='/login'>Sign In</Link>
                 <div>----------or-----------</div>
                 <button onClick={handleGoogleSignIn}  className="google-btn" >

@@ -7,40 +7,37 @@ import useAuth from '../../hooks/useAuth';
 import './PackageDetails.css';
 const PackageDetails = () => {
     const [loading,setLoading]=useState(false);
-    const [packageDetails,setPackage]=useState({});
-    const {packageID}= useParams();
+    const [productDetails,setProduct]=useState({});
+    const {packageID: productID}= useParams();
     const {user}=useAuth();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const history= useHistory();
 
-    console.log(packageID)
     //load package details infomation based on package id
     useEffect(()=>{
-      fetch(`http://localhost:5000/products/${packageID}`)
+      fetch(`https://enigmatic-stream-34553.herokuapp.com/products/${productID}`)
       .then(response => response.json())
       .then(data => {
-        setPackage(data)
+        setProduct(data)
         setLoading(true)
       })
-    },[])
+    },[productID])
 
     //send the booking information with package details,user details etc to the database.
     const onSubmit = data => {
       data.email=user.email;
       data.name=user.displayName;
-      data.packageId=packageID;
-      data.title=packageDetails.name;
-      data.brand=packageDetails.brand;
-      data.model=packageDetails.model;
-      data.series=packageDetails.series;
-      data.material=packageDetails.material;
+      data.packageId=productID;
+      data.title=productDetails.name;
+      data.brand=productDetails.brand;
+      data.material=productDetails.material;
       data.status=false;
-      axios.post('http://localhost:5000/order', data)
+      axios.post('https://enigmatic-stream-34553.herokuapp.com/order', data)
       .then(res => {
           if (res.data.insertedId) {
               alert('added successfully');
               reset();
-              history.push('/myplan');
+              history.push('/');
           }
       })
    };
@@ -60,30 +57,12 @@ const PackageDetails = () => {
                   <div className="row">
                       <hr />
                       <div className="col-lg-4 col-sm-12">
-                            <img className="p-3 border border-secondary border-4 rounded-circle rounder-3 service-img" src={packageDetails.url} alt="" />
+                            <img className="p-3 border border-secondary border-4 rounded-circle rounder-3 service-img" src={productDetails.url} alt="" />
                       </div>
                       <div className="col-lg-8 col-sm-12">
                           <div>
-                          <h2 className="mb-5">{packageDetails.name}</h2>
-                              <div className="row">
-                                  <div className="col-lg-3 col-6">
-                                      <i className="fas fa-map-marker-alt"></i> <span>Brand</span>
-                                      <p>{packageDetails.brand}</p>
-                                  </div>
-                                  <div className="col-lg-3 col-6">
-                                      <i className="fas fa-clock"></i> <span>Model</span>
-                                      <p>{packageDetails.model}</p>
-                                  </div>
-                                  <div className="col-lg-3 col-6">
-                                      <i className="fas fa-calendar-alt"></i> <span>Series</span>
-                                      <p>{packageDetails.series}</p>
-                                  </div>
-                                  <div className="col-lg-3 col-6">
-                                      <i className="fas fa-users"></i> <span>Material</span>
-                                      <p>{packageDetails.material}</p>
-                                  </div>
-                              </div>
-
+                          <h2 className="mb-5">{productDetails.name}</h2>
+                          
                           </div>
                       </div>
                   </div>
@@ -91,7 +70,7 @@ const PackageDetails = () => {
                   <div className="row">
                       <div className="col-lg-8">
                             <h2>Overview</h2>
-                            <p className="mx-5">{packageDetails.description}</p>
+                            <p className="mx-5">{productDetails.description}</p>
                       </div>
                       <div className="col-lg-4 container d-flex justify-content-center align-items-center">
                               <form className="register-form" onSubmit={handleSubmit(onSubmit)}>

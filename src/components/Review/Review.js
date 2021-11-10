@@ -12,7 +12,7 @@ const Review = () => {
 
     const onSubmit = data => {
         data.name=user.displayName;
-        axios.post('http://localhost:5000/review', data)
+        axios.post('https://enigmatic-stream-34553.herokuapp.com/review', data)
         .then(res => {
             if (res.data.insertedId) {
                 alert('added successfully');
@@ -31,8 +31,9 @@ const Review = () => {
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-            </select>
+            </select> <br />
               <textarea  placeholder="Description" {...register("description", {required:true})} rows="2" cols="38" />
+              <input type="date"  placeholder="Date" {...register("date", {required:true})} />
             {errors.description &&  <p className="error">Description is required</p>}
               <input type="submit" value="Submit Review" />
         </form>
