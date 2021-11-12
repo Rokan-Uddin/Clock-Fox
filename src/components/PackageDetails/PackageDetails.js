@@ -41,7 +41,7 @@ const PackageDetails = () => {
           }
       })
    };
-
+   console.log(productDetails)
     return (
       <div>
         {
@@ -59,10 +59,12 @@ const PackageDetails = () => {
                       <div className="col-lg-4 col-sm-12">
                             <img className="p-3 border border-secondary border-4 rounded-circle rounder-3 service-img" src={productDetails.url} alt="" />
                       </div>
-                      <div className="col-lg-8 col-sm-12">
-                          <div>
+                      <div className="col-lg-8 col-sm-12 d-flex align-items-center justify-content-center">
+                          <div className="product-info">
                           <h2 className="mb-5">{productDetails.name}</h2>
-                          
+                          <p> Brand :  {productDetails.brand}</p>
+                          <p>Material : {productDetails.material}</p>
+                          <p>Price : ${productDetails.price}</p>
                           </div>
                       </div>
                   </div>

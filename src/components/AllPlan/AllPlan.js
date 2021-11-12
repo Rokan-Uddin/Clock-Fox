@@ -77,8 +77,8 @@ const AllPlan = () => {
 
                             
                             <div className="m-0">
-                            <button onClick={()=>handleDelete(MyProduct._id)} className="delete-btn" ><i className="fas fa-trash-alt me-2"></i>Delete</button>
-                            <button onClick={()=>handleUpdate(MyProduct._id,MyProduct.status)} className={ MyProduct.status ? "approve-btn px-3 mt-2" : "reject-btn px-3"} >
+                            <button onClick={()=>handleDelete(MyProduct._id)} className="delete-btn" ><i className="fas fa-trash-alt"></i>Delete</button>
+                            <button onClick={()=>handleUpdate(MyProduct._id,MyProduct.status)} className={ MyProduct.status ? "approve-btn px-3 mt-2" : "reject-btn px-3 mt-2"} >
                                 {MyProduct.status ? "Reject" : "Approve"}
                             </button>
                             </div>

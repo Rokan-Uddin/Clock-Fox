@@ -56,7 +56,9 @@ const useFirebase = () => {
         setIsLoading(true)
         signOut(auth)
         .then(()=>{})
-        .finally(()=>setIsLoading(false))
+        .finally(()=>{
+            
+            setIsLoading(false)})
     }
     // update User info after registration complete 
     const updateUser=(name,history,redirect_uri)=>{

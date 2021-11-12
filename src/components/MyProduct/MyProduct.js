@@ -30,7 +30,6 @@ const MyProduct = () => {
                     })
                 }
             }
-
     return (
             <div>
                 {
@@ -42,16 +41,16 @@ const MyProduct = () => {
                 }
                 {
                 <div className="container mt-5">
-                    <h3>Hello Mr. <span className="text-info">{user.displayName}</span>, This is your confirmed package list.</h3>
+                    <h3>Hello Mr. <span className="text-info">{user.displayName}</span>, This is your order list.</h3>
                     {
                         MyProducts.map(MyProduct=> <div
                         key={MyProduct._id}
                         className="row g-4 m-3 border border-4"
                         >
                             <div className="col-lg-9 row">
-                                <h4 className="col-lg-12">{MyProduct.title}</h4>
-                                <div className="col-lg-6"><i className="fas fa-map-marker-alt"></i><span > {MyProduct.brand}</span></div>
-                                <div className="col-lg-6"><i className="fas fa-calendar-alt"></i> <span> {MyProduct.model}</span></div>
+                                <h4 className="col-lg-12 text-success">{MyProduct.title}</h4>
+                                <div className="col-lg-6"><span > {MyProduct.brand}</span></div>
+                                <div className="col-lg-6"><span> {MyProduct.material}</span></div>
                             </div>
                             <div className="col-lg-3 row">
                                 <p>Official Status: <span className={MyProduct.status ? "text-success" : "text-warning"}>{MyProduct.status ? "Approved" : "Pending"}</span> </p>

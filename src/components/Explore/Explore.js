@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import Products from '../Products/Products';
-
+import './Explore.css';
 
 const Explore = () => {
     const [products,setProducts]=useState([]);
@@ -16,7 +16,7 @@ const Explore = () => {
         })
     },[])
     return (
-        <div className="container">
+        <div className="container mb-5">
                 {
                     !loading && <div>
                             <Spinner animation="border" role="status">
@@ -24,7 +24,7 @@ const Explore = () => {
                              </Spinner>
                      </div>
                 }
-            <h1 className="my-5">Our Products</h1>
+            <h1 className="my-5 heading">Our Products</h1>
             <div className="row">
             {
                 products.map(product=><Products

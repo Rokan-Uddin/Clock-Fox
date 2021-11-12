@@ -51,7 +51,7 @@ const Home = () => {
             {
                 reviews.map(review=> <div
                 key={review._id}
-                className="border-start col-lg-4"
+                className="border-start col-lg-4 mt-4"
                 >
                     
                     <div className="d-flex justify-content-between">
@@ -75,9 +75,9 @@ const Home = () => {
             }
             </div>
             </div>
-            <h2>Top Stories</h2>
+            <h2 className="mt-5">Top Stories</h2>
             <hr />
-            <div className="container stories">
+            <div className="container stories mb-5">
                 <div className="row g-4">
                     <div className="col-lg-4">
                         <img src="https://www.watches-of-switzerland.co.uk/medias/Top-Story-Christmas-OMEGA.png?context=bWFzdGVyfHJvb3R8NjQ2MDc4fGltYWdlL3BuZ3xoYjYvaDI4LzkxMjE3NjQ5OTkxOTgucG5nfDg3YzAyZmRlZTliZGJhMTA1NDE0MzJmNDczYTc1Njk2ZWQzYzIwYWYyMjIxOWJlZGJmY2FmOWY4Nzc0MDdiNDE&imwidth=640" alt="" />

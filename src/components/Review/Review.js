@@ -25,6 +25,7 @@ const Review = () => {
         <div className="container d-flex justify-content-center align-items-center w-50">
         <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
               <input defaultValue={user.displayName} required  />
+              <label>  Rating  : </label> 
               <select {...register("rating", {required:true})}>
                     <option value="1">1</option>
                     <option value="2">2</option>
