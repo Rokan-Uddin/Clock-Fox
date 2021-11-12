@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="col-6">
                 <h3 className="">Contact us</h3>
                 <p className="text-start ms-lg-5 ps-lg-5"><i className="fas fa-phone me-3"></i> Phone: +88018500500</p>
-                <p className="text-start ms-lg-5 ps-lg-5"><i className="fas fa-envelope me-3"></i> Email: worldtour@gmail.com</p>
+                <p className="text-start ms-lg-5 ps-lg-5"><i className="fas fa-envelope me-3"></i> Email: clock-fox@gmail.com</p>
                 <p className="text-start ms-lg-5 ps-lg-5"> <i className="fas fa-map-marker-alt me-3"></i> Address: Khulsi,Chittagong</p>
               </div>
                 <div className="col-6">

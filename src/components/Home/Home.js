@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import ReactStars from "react-rating-stars-component";
 import Banner from '../Banner/Banner';
 import Products from '../Products/Products';
@@ -6,13 +7,15 @@ import './Home.css';
 const Home = () => {
     const [products,setProducts]=useState([]);
     const [reviews,setReviews]= useState([]);
+    const [loading,setLoading]= useState(false);
     // fetch data using useEffect and assing to packages variable 
     useEffect(()=>{
         fetch("https://enigmatic-stream-34553.herokuapp.com/products")
         .then(res=>res.json())
         .then(data=>{
             const tem=[data[0],data[1],data[2],data[3],data[4],data[5]];
-            setProducts(tem)
+            setProducts(tem);
+            setLoading(true)
         })
     },[])
     useEffect(()=>{
@@ -25,6 +28,13 @@ const Home = () => {
             <Banner></Banner>
             <div className="container">
                 <h1 className="my-5">Our Products</h1>
+                {
+                    !loading && <div>
+                            <Spinner animation="border" role="status">
+                                 <span className="visually-hidden">Loading...</span>
+                             </Spinner>
+                     </div>
+                }
             <div className="row">
             {
                 products.map(product=><Products

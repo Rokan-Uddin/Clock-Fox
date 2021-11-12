@@ -18,7 +18,7 @@ const Dashboard = () => {
         <Router>
         <div className="row">
                 <div className="col-lg-4">
-                    
+                
                 { 
                 user.email && admin && 
                 <div>
@@ -38,10 +38,8 @@ const Dashboard = () => {
                     <Button onClick={logOut} variant="light">Logout</Button>
                 </div>
                 }
-                    
-                
                 </div>
-                <div className="col-lg-8">
+                <div className="col-lg-8 ">
                         <Switch>
                             <Route  exact path={path}>
                                 Wellcome to Dashboard

@@ -16,13 +16,11 @@ const MakeAdmin = () => {
         })
     };
     return (
-        <div>
+        <div className="d-flex justify-content-center align-items-center mt-3">
                 <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
                     
                     <input  placeholder="Enter Email" {...register("email", {required:true})} />
                     {errors.email &&  <span className="error">Email is required</span>}
-                    
-
                     <input type="submit" />
                 </form>
         </div>

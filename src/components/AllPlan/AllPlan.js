@@ -71,15 +71,14 @@ const AllPlan = () => {
                                 <i className={ !MyProduct.status ? "fas fa-spinner me-2 text-danger" : "fas fa-check-circle me-2 text-success"}></i>
                                 {MyProduct.status ? "Shipped" : "Pending"}</span>)
                             </h4>
-                            <div className="col-lg-6"><i className="fas fa-map-marker-alt"></i><span > {MyProduct.country}</span></div>
-                            <div className="col-lg-6"><i className="fas fa-calendar-alt"></i> <span> {MyProduct.date}</span></div>
+                            <p>Customer: <span className="text-primary">{MyProduct.name}</span></p>
                         </div>
                         <div className="col-lg-3 row">
-                            <p>Customer: <span className="text-primary">{MyProduct.name}</span></p>
+
                             
                             <div className="m-0">
                             <button onClick={()=>handleDelete(MyProduct._id)} className="delete-btn" ><i className="fas fa-trash-alt me-2"></i>Delete</button>
-                            <button onClick={()=>handleUpdate(MyProduct._id,MyProduct.status)} className={ MyProduct.status ? "approve-btn px-3" : "reject-btn px-3"} >
+                            <button onClick={()=>handleUpdate(MyProduct._id,MyProduct.status)} className={ MyProduct.status ? "approve-btn px-3 mt-2" : "reject-btn px-3"} >
                                 {MyProduct.status ? "Reject" : "Approve"}
                             </button>
                             </div>
