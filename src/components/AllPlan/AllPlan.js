@@ -59,7 +59,7 @@ const AllPlan = () => {
             }
             {
             <div className="container mt-5">
-                <h3>This is confirmed package list of all tourists.</h3>
+                <h3>This is confirmed orders of all customer.</h3>
 
                 {
                     MyProducts.map(MyProduct=> <div

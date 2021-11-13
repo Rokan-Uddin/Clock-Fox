@@ -45,9 +45,11 @@ const Dashboard = () => {
                 }
                 </div>
                 <div className="col-lg-9 ">
+                    <h1 className="my-3">Dashboard</h1>
+                    <hr />
                         <Switch>
                             <Route  exact path={path}>
-                                Wellcome to Dashboard
+                                
                             </Route>
                             <Route  path={`${path}/pay`}>
                             Payment system coming soon.
