@@ -16,12 +16,12 @@ const MyProduct = () => {
                     setMyProducts(res.data);
                     setLoading(true)
                 })
-            },[user.email])
+            },[user.email,loading])
             //delete a plan/package
             const handleDelete=(_id)=>{
                 const sure= window.confirm("Are you sure?")
                 if(sure) {
-                    axios.delete(`https://enigmatic-stream-34553.herokuapp.com/order?id=${_id}`)
+                    axios.delete(`https://enigmatic-stream-34553.herokuapp.com/allorder?id=${_id}`)
                     .then(res => {
                         if(res.status){
                             setLoading(false)
