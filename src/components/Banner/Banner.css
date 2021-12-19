@@ -1,46 +1,45 @@
 /* google font  */
-@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Merriweather:ital@1&family=Poppins&family=Roboto+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&family=Merriweather:ital@1&family=Poppins&family=Roboto+Slab&display=swap");
 
-.banner{
-    background-image: url('../../images/8.jpg');
-    background-color: #cccccc; 
-    height: 500px; 
-    background-position: left 20% top 30%; 
-    background-repeat: no-repeat; 
-    background-size: cover;
+.banner {
+  background-image: url("../../images/8.jpg");
+  background-color: #cccccc;
+  height: 550px;
+  background-position: left 20% top 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .banner-text {
-	font-family: 'Irish Grover', cursive;
-	font-size: 50px;
-	font-weight: 800;
-	color: white;
+  font-family: "Irish Grover", cursive;
+  font-size: 50px;
+  font-weight: 800;
+  color: white;
 }
-.banner-description{
-font-family: 'Merriweather', serif;
-color: white;
-
+.banner-description {
+  font-family: "Merriweather", serif;
+  color: white;
 }
 .myButton {
-	box-shadow: 3px 2px 20px 0px #899599;
-	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
-	background-color:#ededed;
-	border-radius:27px;
-	border:3px solid #d6bcd6;
-	display:inline-block;
-	cursor:pointer;
-	color:#3a8a9e;
-	font-family:Arial;
-	font-size:24px;
-	padding:11px 37px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #e1e2ed;
+  box-shadow: 3px 2px 20px 0px #899599;
+  background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+  background-color: #ededed;
+  border-radius: 27px;
+  border: 3px solid #d6bcd6;
+  display: inline-block;
+  cursor: pointer;
+  color: #3a8a9e;
+  font-family: Arial;
+  font-size: 24px;
+  padding: 11px 37px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #e1e2ed;
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
-	background-color:#bab1ba;
+  background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+  background-color: #bab1ba;
 }
 .myButton:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
