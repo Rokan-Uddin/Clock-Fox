@@ -1,37 +1,50 @@
 /* google font  */
-@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Merriweather:ital@1&family=Noto+Serif:wght@700&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&family=Merriweather:ital@1&family=Noto+Serif:wght@700&family=Poppins&display=swap");
 
-.section-header{
-    font-family: 'Noto Serif', serif;
+.section-header {
+  font-family: "Noto Serif", serif;
 }
 
-.stories img{
-    width: 100%;
+.stories img {
+  width: 100%;
 }
-.stories h6,p{
-    margin-top: 5px;
-    text-align: left;
+.stories h6,
+p {
+  margin-top: 5px;
+  text-align: left;
 }
-.stories h6{
-    color: rgb(160, 73, 58);
+.stories h6 {
+  color: rgb(160, 73, 58);
 }
 .read-more {
-	background-color:#44c767;
-	border-radius:28px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:14px;
-	padding:9px 33px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
+  background-color: #44c767;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 14px;
+  padding: 9px 33px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
 }
 .read-more:hover {
-	background-color:#37661e;
+  background-color: #37661e;
 }
 .read-more:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
+}
+.arrow:hover {
+  cursor: pointer !important;
+}
+.review-container:hover {
+  cursor: context-menu !important;
+}
+@media only screen and (max-width: 600px) {
+  .review-container {
+    padding: 0px !important;
+    width: 80% !important;
+  }
 }
